@@ -135,12 +135,10 @@ function getGrades(){
             continue;
         }
         else if(skipIndexes.includes(i)){
-            console.log("skipped by includes bad index");
             continue;
         }
         else{
             let currentGradeInput = parseFloat(value);
-            console.log("current grade is "+currentGradeInput);
             grades.push(currentGradeInput);
         }
     }
@@ -152,18 +150,14 @@ function getWeights(){
         let id = weightInput[i].id;
         let value = document.getElementById(id).value;
         if(value === "" || document.getElementById(`${parseInt(id)-1}`).value === ""){
-            console.log("skipped by ''");
             skipIndexes.push(i);
             continue skip;
         }
         else if(skipIndexes.includes(i)){
-            console.log("skipped by includes bad index");
             continue;
         }
         else{
             let currentWeightInput = parseFloat(value);
-            console.log("current weight id "+id);
-            console.log("current weight is "+currentWeightInput);
             sumWeights+=currentWeightInput;
             weights.push(currentWeightInput);
         }
@@ -179,15 +173,9 @@ function calculateGrade(){
                 continue skip;
             }
         }
-        console.log("grades[i] is "+grades[i]);
-        console.log("weights[i] is "+weights[i]);
         finalGrade += grades[i]*weights[i];
     }
-    console.log("final grade is "+finalGrade);
-    console.log("sumWeights is "+sumWeights)
-    //let outputValue = Math.round(((finalGrade/sumWeights)+Number.EPSILON)* 100)/100;
-    //console.log(outputValue);
-    let outputValue = finalGrade/sumWeights;
+    let outputValue = Math.round(((finalGrade/sumWeights)+Number.EPSILON)* 100)/100;
     if(Number.isNaN(outputValue)){
         return null;
     }

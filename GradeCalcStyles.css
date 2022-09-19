@@ -34,19 +34,10 @@
 
 }
 :root{
-    --clr-primary-1: #48aac0;
-    --clr-primary-2:#16537e;
-    --clr-primary-3: #ff8383;
-    --clr-primary-4: #fadd86;
-    --clr-primary-5: #3eb99d;
     --ff-primary: helveticaregular;
     --ff-secondary: alright_sansitalic;
     --ff-support: alright_sansblack;
-    --ff-input: helveticabold_oblique;
-    --transition: all 0.3s linear;
 }
-
-
 
 /******************Tabs*******************/
 .calculator.active{
@@ -88,18 +79,23 @@ input{
 /**************Layout******************/
 body{
     margin: 0px;
+    padding:0px;
+    background-image: radial-gradient( circle 400px at 6.8% 8.3%,  rgba(255,244,169,1) 0%, rgba(255,244,234,1) 100.2% );
+    overflow-x: hidden; /*Use resposive layout to add hor scroll when neccessary*/
 }
 .banner{
     position: relative;
     left: 2in;
     margin: 0px;
     padding: 15px;
-    background-color: none; /*repl with gradient */ 
-    width: 25vw;
+    max-width: 25vw;
 }
 .banner-back{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 5px solid black;
-    width: 100vw;
+    max-width: 100vw;
     margin: 0px;
     padding:0px;
     height: 80px;
@@ -140,7 +136,12 @@ h2{
 }
 .area{
     float:left;
+    padding: 0px;
 }
+p{
+    font-family: var(--ff-secondary);
+}
+
 /**********************/
 div.title-container{
     position: relative;
@@ -152,7 +153,7 @@ div.title-container{
     grid-template-columns: 5vw 5vw 7vw 7vw;
     margin: 25px 0px 0px 0px;
     border:5px solid black;
-    width: 5in;
+    max-width: 5in;
 }
 
 .title{
@@ -202,23 +203,63 @@ section.nav-btns{
     border-bottom-style: none;
     border-bottom-width: 5px;
     border-bottom-color: black;
-    width: 5in;
+    max-width: 5in;
 }
 
 .calculator-tab-btn{
     border: 3px solid black;
-    padding: 1.5px;
+    padding: 3px;
     margin: 5px 5px 5px 0px;
     grid-column: 1 / 3;
     grid-row: 1 / 3;
     align-self: left;
+
+    box-shadow: 4px 3px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+    cursor:pointer;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
 }
+.calculator-tab-btn:hover{
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color:#bab1ba;
+}
+.calculator-tab-btn:active{
+    position:relative;
+	top:1px;
+}
+
 
 .info-tab-btn{
     border: 3px solid black;
     padding: 1.5px;
     margin: 5px 5px 5px 0px;
     grid-row: 1 / 3;
+    min-width: 75px;
+
+    box-shadow: 4px 3px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+    cursor:pointer;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+.info-tab-btn:hover{
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color:#bab1ba;
+}
+.info-tab-btn:active{
+    position:relative;
+	top:1px;
 }
 /************************************/
 div.inputs{
@@ -229,13 +270,20 @@ div.inputs{
 }
 
 .name{
-    grid-column: 1 / 3
+    grid-column: 1 / 3;
+    max-width: 140px;
+    min-width: 80px;
+    margin-right: 5px;
 }
 .grade{
     grid-column: 3 / 4;
+    max-width: 100px;
+    min-width: 40px;
 }
 .weight{
     grid-column: 4 / -1;
+    max-width: 100px;
+    min-width: 40px;
 }
 /*********************************/
 
@@ -250,16 +298,155 @@ div.calculate-btns{
 
 .add-row-btn{
     grid-column: 1 / 5;
+
+    box-shadow: 4px 3px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+    cursor:pointer;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
 }
+.add-row-btn:hover{
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color:#bab1ba;
+}
+.add-row-btn:active{
+    position:relative;
+	top:1px;
+}
+
 
 .calculate-btn{
     grid-column: 1 / 3;
     grid-row: 3 / 4;
-}
 
+    box-shadow: 4px 3px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+    cursor:pointer;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+.calculate-btn:hover{
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color:#bab1ba;
+}
+.calculate-btn:active{
+    position:relative;
+	top:1px;
+}
 .reset-btn{
     grid-column: 3 / 5;
     grid-row: 3 / 4;
-}
 
-/***********************************/
+    box-shadow: 4px 3px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+    cursor:pointer;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+.reset-btn:hover{
+    background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color:#bab1ba;
+}
+.reset-btn:active{
+    position:relative;
+	top:1px;
+}
+/***************Responsive Browser*******************/
+@media (max-width:920px){
+    section.nav-btns{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        left:0px;
+        min-width: 94.8vw;
+    }
+    .calculator-tab-btn, .info-tab-btn{
+        flex-wrap: wrap;
+    }
+
+    div.info-titles{
+        display: flex;
+        flex-direction: row;
+    }
+    .item, .grade-title, .weight-title{
+        flex-wrap: wrap;
+        margin: 8px 8px 8px 2px;
+    }
+    
+    div.inputs{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .name, .grade, .weight{
+        flex-wrap: wrap;
+    }
+
+    section.area{
+        float:left;
+        margin: 0px;
+        padding:0px;
+    }
+    div.title-container{
+        position: relative;
+        left:0px;
+        margin: 0px;
+        min-width: 94.8vw;
+        border-top: none;
+    }
+
+    section.calculator{
+        position: relative;
+        left:0px;
+        min-width: 94.8vw;
+    }
+
+    div.calculate-btns{
+        display: flex;
+        flex-direction: column;
+    }
+    button.add-row-btn{
+        flex-wrap: wrap;
+    }
+    button.calculate-btn{
+        flex-wrap: wrap;
+    }
+    button.reset-btn{
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .banner{
+        left: 0px;
+        padding: 14px;
+    }
+    div.title{
+        min-width: 100vw;
+    }
+    p.caption{
+        min-width: 100vw;
+    }
+
+    section.info.active{
+        position: relative;
+        left: 0.5vw;
+        float: none;
+        clear:left;
+    }
+
+}

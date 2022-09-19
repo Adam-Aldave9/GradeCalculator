@@ -8,93 +8,87 @@
     <title>Grade Calculator</title>
 </head>
 <body>
-    <div><!--Body-->
-        <div class="banner-back"><h1 class="banner">Grade Calculator</h1></div>
-        <section class="area">
-            <div class="title-container">
-                <div class="title">Calculate Your Grade</div>
-                <p class="caption">A+? C+? Passing? Failing? Find out yourself! </p>
+    <div class="banner-back"><h1 class="banner">Grade Calculator</h1></div>
+    <section class="area">
+        <div class="title-container">
+            <div class="title">Calculate Your Grade</div>
+            <p class="caption">A+? C+? Passing? Failing? Find out yourself! </p>
+        </div>
+
+        <section class="nav-btns" id="nav-container">
+            <button class="calculator-tab-btn active">Grade Calculator</button>
+            <button class="info-tab-btn">Info</button>
+        </section>
+        <!------------Tab Content section.--------------->
+        <section class="calculator active" data-id="calculator">
+            <div class="info-titles"><!--Flex-->
+                <div class="item">Item Name (optional)</div>
+                <div class="grade-title">Grade(%)</div>
+                <div class="weight-title">Weight(%)</div>
+            </div>
+            <section class="input-section">
+                <div class="inputs">
+                    <input class="name" type="text" placeholder="Ex: Quizzes" id="1">
+                    <input class="grade" type="number" id="2">
+                    <input class="weight" type="number" id="3">
+                </div>
+                <div class="inputs">
+                    <input class="name" type="text" placeholder="Ex: Assignments" id="4">
+                    <input class="grade" type="number" id="5">
+                    <input class="weight" type="number" id="6">
+                </div>
+                <div class="inputs">
+                    <input class="name" type="text" placeholder="Ex: Exam" id="7">
+                    <input class="grade" type="number" id="8">
+                    <input class="weight" type="number" id="9">
+                </div>
+            </section>
+            <div class="calculate-btns">
+                <button class="add-row-btn">Add row</button><br>
+                <button class="calculate-btn">Calculate</button>
+                <button class="reset-btn">Reset</button>
+            </div>
+            <div class="output-container">
+                Average Grade:
+                <div class="output">
+                
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="info" data-id="info">
+        <h2>Grade Calculation</h2>
+        <p>
+            A weighted grade is calculated by the sum of the products of grades<br>and their corresponding weights divided by the sum of the weights.
+            <div>Weighted grade = (g<sub>1</sub>×w<sub>1</sub>+g<sub>2</sub>×w<sub>2</sub>+g<sub>3</sub>×w<sub>3</sub>+...) / (w<sub>1</sub>+w<sub>2</sub>+w<sub>3</sub>+...)</div>
+            <div>Both the weights and grades used should be in percentage form. <br>
+                <h1>Example</h1>
+                Calculating your Final Grade in your Math course:
+                <ul>
+                    <li>Assignments are worth 30%, and your overall grade for them is 70%</li>
+                    <li>Midterm is worth 30%, and your overall grade for it is 80%</li>
+                    <li>Exam is worth 40%, and your overall grade for it is 60%</li>
+                </ul>
+                Weighted grade = (g<sub>1</sub>×w<sub>1</sub>+g<sub>2</sub>×w<sub>2</sub>+g<sub>3</sub>×w<sub>3</sub>) / (w<sub>1</sub>+<sub>2</sub>+w<sub>3</sub>)<br>
+                <span>= [(70)×(30)+(80)×(30)+(60)×(40)] / (30+30+40)</span><br><!--Style to align with equal sign above-->    
+                <span>= 6900 / 100</span><br
+                <span>= 69</span> 
+                <h1>Example</h1>
+                Calculating your Overall Grade on a Test:
+                <ul>
+                    <li>Section 1 is worth 25%, and your overall grade for it is 81%</li>
+                    <li>Section 2 is worth 20%, and your overall grade for it is 90%</li>
+                    <li>Section 3 is worth 40%, and your overall grade for it is 56%</li>
+                    <li>Section 4 is worth 15%, and your overall grade for it is 63%</li>
+                </ul>
+                Weighted grade = (g<sub>1</sub>×w<sub>1</sub>+g<sub>2</sub>×w<sub>2</sub>+g<sub>3</sub>×w<sub>3</sub>+g<sub>4</sub>×w<sub>4</sub>) / (w<sub>1</sub>+<sub>2</sub>+w<sub>3</sub>+w<sub>4</sub>)<br>
+                <span>= [(81)×(25)+(90)×(20)+(56)×(40)+(63)×(15)] / (25 + 20 + 40 + 15)</span><br><!--Style to align with equal sign above-->    
+                <span>= 7010 / 100</span><br
+                <span>= 70.1</span>      
             </div>
 
-            <section class="nav-btns" id="nav-container">
-                <button class="calculator-tab-btn active">Grade Calculator</button>
-                <button class="info-tab-btn">Info</button>
-            </section>
-            <!------------Tab Content section.--------------->
-            <section class="calculator active" data-id="calculator">
-                <div class="info-titles"><!--Flex-->
-                    <div class="item">Item Name (optional)</div>
-                    <div class="grade-title">Grade(%)</div>
-                    <div class="weight-title">Weight(%)</div>
-                </div>
-                <section class="input-section">
-                    <div class="inputs">
-                        <input class="name" type="text" placeholder="Ex: Quizzes" id="1">
-                        <input class="grade" type="number" id="2">
-                        <input class="weight" type="number" id="3">
-                    </div>
-                    <div class="inputs">
-                        <input class="name" type="text" placeholder="Ex: Assignments" id="4">
-                        <input class="grade" type="number" id="5">
-                        <input class="weight" type="number" id="6">
-                    </div>
-                    <div class="inputs">
-                        <input class="name" type="text" placeholder="Ex: Exam" id="7">
-                        <input class="grade" type="number" id="8">
-                        <input class="weight" type="number" id="9">
-                    </div>
-                </section>
-                <div class="calculate-btns">
-                    <button class="add-row-btn">Add row</button><br>
-                    <button class="calculate-btn">Calculate</button>
-                    <button class="reset-btn">Reset</button>
-                </div>
-                <div class="output-container">
-                    Average Grade:
-                    <div class="output">
-                
-                    </div>
-                </div>
-            </section>
+        </p>
     </section>
-        <section class="info" data-id="info">
-            <h2>Grade Calculation</h2>
-            <p>
-                A weighted grade is calculated by the sum of the products of grades<br>and their corresponding weights divided by the sum of the weights.
-                <div>Weighted grade = (g<sub>1</sub>×w<sub>1</sub>+g<sub>2</sub>×w<sub>2</sub>+g<sub>3</sub>×w<sub>3</sub>+...) / (w<sub>1</sub>+w<sub>2</sub>+w<sub>3</sub>+...)</div>
-                <div>Both the weights and grades used should be in percentage form. <br>
-                    <h1>Example</h1>
-                    Calculating your Final Grade in your Math course:
-                     <ul>
-                        <li>Assignments are worth 30%, and your overall grade for them is 70%</li>
-                        <li>Midterm is worth 30%, and your overall grade for it is 80%</li>
-                        <li>Exam is worth 40%, and your overall grade for it is 60%</li>
-                     </ul>
-                    Weighted grade = (g<sub>1</sub>×w<sub>1</sub>+g<sub>2</sub>×w<sub>2</sub>+g<sub>3</sub>×w<sub>3</sub>) / (w<sub>1</sub>+<sub>2</sub>+w<sub>3</sub>)<br>
-                    <span>= [(70)×(30)+(80)×(30)+(60)×(40)] / (30+30+40)</span><br><!--Style to align with equal sign above-->    
-                    <span>= 6900 / 100</span><br
-                    <span>= 69</span> 
-                    <h1>Example</h1>
-                    Calculating your Overall Grade on a Test:
-                     <ul>
-                        <li>Section 1 is worth 25%, and your overall grade for it is 81%</li>
-                        <li>Section 2 is worth 20%, and your overall grade for it is 90%</li>
-                        <li>Section 3 is worth 40%, and your overall grade for it is 56%</li>
-                        <li>Section 4 is worth 15%, and your overall grade for it is 63%</li>
-                     </ul>
-                    Weighted grade = (g<sub>1</sub>×w<sub>1</sub>+g<sub>2</sub>×w<sub>2</sub>+g<sub>3</sub>×w<sub>3</sub>+g<sub>4</sub>×w<sub>4</sub>) / (w<sub>1</sub>+<sub>2</sub>+w<sub>3</sub>+w<sub>4</sub>)<br>
-                    <span>= [(81)×(25)+(90)×(20)+(56)×(40)+(63)×(15)] / (25 + 20 + 40 + 15)</span><br><!--Style to align with equal sign above-->    
-                    <span>= 7010 / 100</span><br
-                    <span>= 70.1</span>      
-                </div>
-
-            </p>
-        </section>
-        <!------------------------------>
-
-
-
-    </div>
     <script src="GradeCalcApp.js"></script>
 </body>
 </html>
